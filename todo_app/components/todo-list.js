@@ -29,9 +29,10 @@ export default function ToDoList() {
   }
 
   const debouncedUpdateTodo = useCallback(
-  debounce((id, updates) => {
-    updateTodo(id, updates);
-  }, 500),
+  (id, updates) => {
+    const debouncedFn = debounce(updateTodo, 500);
+    return debouncedFn(id, updates);
+  },
   [updateTodo]
 );
 
