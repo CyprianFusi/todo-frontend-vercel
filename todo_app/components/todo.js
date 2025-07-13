@@ -8,7 +8,7 @@ export default function ToDo(props) {
     <div className={styles.toDoRow} key={todo.id}>
       <input className={styles.toDoCheckbox} name="completed" type="checkbox" checked={todo.completed} value={todo.completed} onChange={(e) => onChange(e, todo.id)}></input>
       <input className={styles.todoInput} autoComplete='off' name="name" type="text" value={todo.name} onChange={(e) => onChange(e, todo.id)}></input>
-      <button className={styles.deleteBtn} onClick={() => onDelete(todo.id)}><Image src="/delete_icon.jpg" width="24" height="24" /></button>
+      <button className={styles.deleteBtn} onClick={() => onDelete(todo.id)}><Image src="/delete_icon.jpg" alt="" width="24" height="24" /></button>
     </div>
   )
 }

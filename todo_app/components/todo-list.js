@@ -28,7 +28,12 @@ export default function ToDoList() {
     setTodos(json)
   }
 
-  const debouncedUpdateTodo = useCallback(debounce(updateTodo, 500), [])
+  const debouncedUpdateTodo = useCallback(
+  debounce((id, updates) => {
+    updateTodo(id, updates);
+  }, 500),
+  [updateTodo]
+);
 
   function handleToDoChange(e, id) {
     const target = e.target
