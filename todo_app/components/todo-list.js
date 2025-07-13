@@ -28,11 +28,14 @@ export default function ToDoList() {
     setTodos(json)
   }
 
-  const debouncedUpdateTodo = useCallback(
-  (id, updates) => {
-    const debouncedFn = debounce(updateTodo, 500);
-    return debouncedFn(id, updates);
-  },
+  const updateTodo = useCallback((id, updates) => {
+  
+}, []);
+
+const debouncedUpdateTodo = useCallback(
+  debounce((id, updates) => {
+    updateTodo(id, updates);
+  }, 500),
   [updateTodo]
 );
 
